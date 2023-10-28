@@ -1,6 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 
+/* 
+ * LO6: Construct programs utilizing graphical user interfaces utilizing event-driven programming.
+ */
+
 public class InteractiveGroceryListView extends JFrame
 {	
 	public InteractiveGroceryListView()
@@ -8,7 +12,10 @@ public class InteractiveGroceryListView extends JFrame
 	}
 	
 	public static void main(String[] args)
-	{		
+	{	
+		// CREATE INDIVIDUAL METHODS FOR EACH GUI COMPONENT TO SEPARATE CONCERNS AND
+		// MAKE IT EASIER TO VISUALLY INTERPRET THE CODE
+		
 		JPanel grayPanel1 = new JPanel();
 		grayPanel1.setBackground(Color.GRAY);
 		grayPanel1.setBounds(25,10,200,25);

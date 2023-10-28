@@ -23,7 +23,12 @@
  *  www.youtube.com/watch?v=wq9SJb8VeyM. Accessed 24 Oct. 2023.
  */
 
+/* 
+ * I'm thinking that this file might end up serving as the CONTROLLER.
+ */
+
 public class MainFile 
+
 {
 
 	public static void main(String[] args) 

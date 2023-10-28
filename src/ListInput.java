@@ -1,6 +1,19 @@
+import java.util.Arrays;
+import javax.swing.JButton;
+
+/* 
+ * LO2 - SINGLE & MULTIDIMENSIONAL ARRAYS
+ */
 
 public class ListInput 
 {
+	/* I'm not sure yet, but this class might end up serving as the MODEL...
+	 * We have to discuss it further, but the idea of this class is for it to contain
+	 * all of the functionality for the enum classes. This is where the enum constants
+	 * are manipulated; where their data is used. So, that is why I'm thinking that this
+	 * might be the class to serve as the MODEL...
+	 */
+	
 
 	public static void main(String[] args) 
 	{
@@ -45,6 +58,8 @@ public class ListInput
 		
 		// DAIRY ~ DAIRY ~ DAIRY ~ DAIRY ~ DAIRY ~ DAIRY ~ DAIRY ~ DAIRY ~ DAIRY ~ //
 		
+		//-------------------------------------------------------------------------//
+		
 		// GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ //
 		
 		// creates "objects" of the Grains enum set specifically to White Bread and
@@ -56,9 +71,23 @@ public class ListInput
 		// functionality in letting the user know if White Bread and Bread Crumbs 
 		// come in Gluten-Free or not
 		isGlutenFree(whiteBread);
-		isGlutenFree(breadCrumbs);
+		isGlutenFree(breadCrumbs);	
 		
 		// GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ //
+		
+		//-------------------------------------------------------------------------//
+		
+		// CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY //
+		
+		// creates an "object" of a specific Candy enum
+		Candy milkChocolate = Candy.MILKCHOCOLATE;
+		
+		// invokes the method in the main method with one Candy enum passed as the
+		// argument which executes the method's functionality for this specific argument
+		candyArray(milkChocolate);
+		
+		
+		
 	}
 	
 	public static void isGlutenFree(Grains grains) 
@@ -81,5 +110,43 @@ public class ListInput
 			System.out.println("This item does not have a Gluten-Free option.");
 		}
 	}
+	
+	// GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ GRAINS ~ //
+	
+	//-------------------------------------------------------------------------//
+	
+	// CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY //
+	
+	/** Purpose: LO2 - SINGLE & MULTIDIMENSIONAL ARRAYS:
+	 * 
+	 *  PUT ENUM CONSTANTS INTO AN ARRAY. THEN, CREATE BUTTONS FOR EACH
+	 *  ELEMENT IN THE ARRAY.
+	 *  
+	 *  Method is concerned with creating an array to hold the Candy
+	 *  enum constants. A button is then created for every element in the array.
+	 *  A for loop then traverses the length of the array assigning a button to
+	 *  each element it encounters with the name of the constant.
+	 *  Finally, a print statement prints the contents of the array to the console.
+	 *  @param Candy candy
+	 */
+	public static void candyArray(Candy candy) 
+	{
+		Candy[] candyArray = Candy.values();
+		
+		JButton[] candyButtons = new JButton[candyArray.length];
+		
+		for(int i = 0; i < candyArray.length; i++) 
+		{
+			candyButtons[i] = new JButton(candyArray[i].name());
+		}
+		
+		System.out.println(Arrays.toString(candyArray));
+	}
+	
+	// CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY ~ CANDY //
+	
+	// Turn the constants in each enum file -> array -> JButtons
+	
+	
 
 }
